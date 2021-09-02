@@ -1,0 +1,74 @@
+// 设置颜色变量
+@bg-color:#94d474;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font:bold 20px "Courier";
+}
+
+// 主窗口
+#main{
+    display: flex;
+    flex-direction: column;
+    // 侧轴对齐方式
+    align-items: center;
+    // 主轴对齐方式
+    justify-content: space-around;
+    width: 360px;
+    height: 420px;
+    background-color: @bg-color;
+    margin:100px auto;
+    border: 10px solid black;
+    border-radius: 10px;
+
+    // 游戏舞台
+    #stage{
+        position: relative;
+        width: 304px;
+        height: 304px;
+        border: 2px solid black;
+        margin: 0 auto;
+
+        // 设置蛇的样式
+        #snake{
+            &>div{
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                border: 1px @bg-color solid;
+            }
+        }   
+        //设置食物  
+        #food{
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: 40px;
+            top: 100px;
+
+            &>div{
+                width: 4px;
+                height: 4px;
+                background-color: #000;
+                transform:rotate(45deg);
+            }
+        }
+    }
+
+    // 游戏记分牌
+    #score-panel{
+        width: 300px;
+        display: flex;
+        // 设置主轴对齐方式
+        justify-content: space-between;
+    }
+}
